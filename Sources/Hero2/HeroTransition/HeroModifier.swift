@@ -22,6 +22,8 @@ public enum HeroModifier {
 
     case transform(CATransform3D)
 
+    case anchorPoint(CGPoint)
+
     case delay(TimeInterval)
     case duration(TimeInterval)
 

@@ -58,6 +58,8 @@ func process(modifiers: [HeroModifier], on state: inout ViewState, metadata: ino
             state.alpha = 0
         case .transform(let transform):
             state.transform = (state.transform ?? .identity).concatenating(transform)
+        case .anchorPoint(let anchor):
+            state.anchorPoint = anchor
         case .shadowOpacity(let shadowOpacity):
             state.shadowOpacity = shadowOpacity
         case .zPosition(let zPosition):
@@ -104,7 +106,7 @@ func viewStateFrom(view: UIView) -> ViewState {
     result.size = view.bounds.size
     result.cornerRadius = view.layer.cornerRadius
     result.backgroundColor = view.backgroundColor
-    result.anchorPoint = view.anchorPoint
+    result.anchorPoint = view.layer.anchorPoint
     return result
 }
 
@@ -190,7 +192,7 @@ func applyViewState(_ viewState: ViewState, to view: UIView) {
         view.backgroundColor = backgroundColor
     }
     if let anchorPoint = viewState.anchorPoint {
-        view.anchorPoint = anchorPoint
+        view.layer.anchorPoint = anchorPoint
     }
 }
 
