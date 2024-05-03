@@ -31,6 +31,7 @@ struct ViewState: Equatable {
     var matchWidthOnly: Bool? = nil
     var skipContainer: Bool? = nil
     var forceTransition: Bool? = nil
+    var anchorPoint: CGPoint? = nil
     @IndirectOptional var beginState: ViewState? = nil
 }
 
@@ -55,6 +56,7 @@ extension ViewState {
             scaleSize: state.scaleSize ?? scaleSize,
             matchWidthOnly: state.matchWidthOnly ?? matchWidthOnly,
             skipContainer: state.skipContainer ?? skipContainer,
+            anchorPoint: state.anchorPoint ?? anchorPoint
             beginState: state.beginState ?? beginState
         )
     }

@@ -104,6 +104,7 @@ func viewStateFrom(view: UIView) -> ViewState {
     result.size = view.bounds.size
     result.cornerRadius = view.layer.cornerRadius
     result.backgroundColor = view.backgroundColor
+    result.anchorPoint = view.anchorPoint
     return result
 }
 
@@ -187,6 +188,9 @@ func applyViewState(_ viewState: ViewState, to view: UIView) {
     }
     if let backgroundColor = viewState.backgroundColor {
         view.backgroundColor = backgroundColor
+    }
+    if let anchorPoint = viewState.anchorPoint {
+        view.anchorPoint = anchorPoint
     }
 }
 
