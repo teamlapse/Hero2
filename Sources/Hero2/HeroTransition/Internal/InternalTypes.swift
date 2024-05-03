@@ -56,7 +56,7 @@ extension ViewState {
             scaleSize: state.scaleSize ?? scaleSize,
             matchWidthOnly: state.matchWidthOnly ?? matchWidthOnly,
             skipContainer: state.skipContainer ?? skipContainer,
-            anchorPoint: state.anchorPoint ?? anchorPoint
+            anchorPoint: state.anchorPoint ?? anchorPoint,
             beginState: state.beginState ?? beginState
         )
     }
